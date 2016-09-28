@@ -7,8 +7,14 @@ var ReactTransitionGroup = React.addons.TransitionGroup;
 require('normalize.css');
 require('../styles/main.scss');
 
-var imageURL = require('../images/yeoman.png');
+var imageDatas = require('../data/imageDatas.json');
 
+function genImageURL(imageDatasArr){
+  for (var i = 0; j < imageDatas.length; i <j ;i++) {
+    var singleImageData = imageDatas[i];
+    singleImageData.imageURL = require('../images/'+singleImageData.fileName);
+  }
+}
 var GalleryByReactApp = React.createClass({
   render: function() {
     return (
